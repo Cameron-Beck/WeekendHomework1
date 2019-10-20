@@ -6,17 +6,19 @@ def total_cash (sum)
   return @pet_shop[:admin][:total_cash]
 end
 
-# def add_or_remove_cash(total_cash, amount)
-#   amount = 10
-#   total_cash = (@pet_shop[:admin][:total_cash] + amount)
-#   p total_cash
-#   return total_cash
-# end
+def add_or_remove_cash(total_cash, amount)
+  total_cash = (@pet_shop[:admin][:total_cash] += amount)
+  return total_cash
+end
 
 def pets_sold(sold)
   return @pet_shop[:admin][:pets_sold]
 end
 
-def increase_pets_sold(sold)
-  
+def increase_pets_sold(sold, amount)
+  sold = (@pet_shop[:admin][:pets_sold] = amount)
+end
+
+def stock_count(count)
+  return @pet_shop[:pets].count
 end
